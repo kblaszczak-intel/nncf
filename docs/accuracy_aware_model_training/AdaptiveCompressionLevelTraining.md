@@ -1,7 +1,7 @@
 # Adaptive Compression Level training loop in NNCF
 
-Adaptive Compression Level training loop is the meta-algorithm that performs searching for the most compression level of the underneath compression algorithms while staying within the range of the user-defined maximum accuracy degradation.
-The compression pipeline can consist of several compression algorithms (Algorithms Mixing), however, **performing a compression level search is supported only for a single compression algorithm with an adaptive compression level**. They could be  **Magnitude Sparsity** and **Filter Pruning**. In the other words, the compression schemes like **Quantization** + **Filter Pruning** or **Quantization** + **Sparsity** are supported, while **Filter Pruning** + **Sparsity** is not, because **Filter Pruning** and **Sparsity** both are algorithms with adaptive compression level.
+Adaptive Compression Level training loop is a meta-algorithm that looks for the highest compression level of the underlying compression algorithms, while staying within a user-defined maximum accuracy degradation range.
+The compression pipeline may consist of several compression algorithms (Algorithm Mixing), however, **performing a compression level search is supported only for a single compression algorithm with an adaptive compression level**. They could be  **Magnitude Sparsity** and **Filter Pruning**. In the other words, the compression schemes like **Quantization** + **Filter Pruning** or **Quantization** + **Sparsity** are supported, while **Filter Pruning** + **Sparsity** is not, because **Filter Pruning** and **Sparsity** both are algorithms with adaptive compression level.
 
 See a PyTorch [example](../../examples/torch/classification/main.py) for **Quantization** + **Filter Pruning** scenario on CIFAR10 and ResNet18 [config](../../examples/torch/classification/configs/pruning/resnet18_cifar10_accuracy_aware.json).
 
